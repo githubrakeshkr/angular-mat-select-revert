@@ -1,0 +1,13 @@
+<h4>Confirm '{{data.food}}' selection</h4>
+<h4>Confirm '{{data}}' selection</h4>
+<mat-nav-list>
+	<a href="javascript:;" mat-list-item (click)="dismiss(true)">
+		<span mat-line>Yes</span>
+		<span mat-line>I am very sure</span>
+	</a>
+
+	<a href="javascript:;" mat-list-item (click)="dismiss(false)">
+		<span mat-line>No</span>
+		<span mat-line>I am not very sure</span>
+	</a>
+</mat-nav-list>

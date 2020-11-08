@@ -1,0 +1,34 @@
+<h4>Basic mat-select</h4>
+
+<mat-form-field>
+	<mat-label>Favorite food</mat-label>
+	<mat-select [(ngModel)]="selectedFood" (selectionChange)="intercept($event.value)">
+		<mat-option *ngFor="let food of foods" [value]="food.value">
+			{{food.viewValue}}
+		</mat-option>
+	</mat-select>
+</mat-form-field>
+
+<h4>Basic input</h4>
+<mat-form-field class="example-full-width">
+	<mat-label>Selected Favorite food</mat-label>
+	<input matInput placeholder="Ex. Pizza" [value]="selectedFoodInputValue">
+</mat-form-field>
+
+	<form [formGroup]="ngsspUpdateMessageForm">
+
+		<mat-form-field>
+			<mat-label>Select PVR</mat-label>
+			<mat-select formControlName="pvrIdControl" id="pvrIdControl"  (selectionChange)="loadpPvPvrDetails($event)" disableRipple>
+				<mat-option *ngFor="let pvr of pvrDetails" [value]="pvr">
+					{{pvr.pvrId}}
+				</mat-option>
+			</mat-select>
+			<mat-error *ngIf="pvrIdControl.invalid && pvrIdControl.errors.required">
+				<strong>Please select a PVR</strong>
+			</mat-error>
+		</mat-form-field>
+	</form>
+	<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
